@@ -1,0 +1,62 @@
+{
+  "episodeId": "ep03",
+  "channel": "comparison",
+  "compositionId": "Ep03CaseComparison",
+  "title": "Eternal (Zomato) vs Swiggy — Q2 FY27 Business Model War (9/10 Showcase)",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "hasVoice": false,
+  "voiceFile": null,
+  "transitionFrames": 9,
+  "scenes": [
+    {
+      "id": "c01-hook",
+      "durationInFrames": 90,
+      "cutMode": "push",
+      "isLight": false
+    },
+    {
+      "id": "c02-stakes",
+      "durationInFrames": 95,
+      "cutMode": "whip",
+      "isLight": false
+    },
+    {
+      "id": "c03-versus",
+      "durationInFrames": 105,
+      "cutMode": "wipe",
+      "isLight": false
+    },
+    {
+      "id": "c04-ticker",
+      "durationInFrames": 105,
+      "cutMode": "cut",
+      "isLight": false
+    },
+    {
+      "id": "c05-filing",
+      "durationInFrames": 105,
+      "cutMode": "cut",
+      "isLight": true
+    },
+    {
+      "id": "c06-timeline",
+      "durationInFrames": 105,
+      "cutMode": "cut",
+      "isLight": false
+    },
+    {
+      "id": "c07-economics",
+      "durationInFrames": 95,
+      "cutMode": "cut",
+      "isLight": true
+    },
+    {
+      "id": "c08-verdict",
+      "durationInFrames": 105,
+      "cutMode": "cut",
+      "isLight": false
+    }
+  ]
+}

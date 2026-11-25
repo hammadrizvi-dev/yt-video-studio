@@ -1,6 +1,7 @@
 import React from "react";
 import { CalculateMetadataFunction } from "remotion";
 import { BGM_TRACKS } from "@config/audioMap";
+import { StudioEpisodeProps } from "@config/studioSchema";
 import {
   EpisodeShell,
   SceneSlot,
@@ -15,10 +16,7 @@ import { Scene05BenchmarkNews } from "./scenes/Scene05BenchmarkNews";
 import { Scene06PowerStack } from "./scenes/Scene06PowerStack";
 import { Scene07OutroDev } from "./scenes/Scene07OutroDev";
 
-export type TechEpisodeProps = {
-  hasVoiceOverride?: boolean;
-  voiceFileOverride?: string | null;
-};
+export type TechEpisodeProps = Partial<StudioEpisodeProps>;
 
 const TRANSITION_FRAMES = 9;
 
@@ -59,6 +57,9 @@ const TECH_SFX: SfxCue[] = [
 export const TechEpisode: React.FC<TechEpisodeProps> = ({
   hasVoiceOverride = false,
   voiceFileOverride = null,
+  showCaptions = false,
+  debugSafeZone = false,
+  progressColor = "#38F2FF",
 }) => {
   return (
     <EpisodeShell
@@ -66,13 +67,15 @@ export const TechEpisode: React.FC<TechEpisodeProps> = ({
       transitionFrames={TRANSITION_FRAMES}
       hasVoice={hasVoiceOverride}
       voiceFile={voiceFileOverride}
+      showCaptions={showCaptions}
+      debugSafeZone={debugSafeZone}
       bgmSegments={[
         { from: 0, durationInFrames: 368, file: BGM_TRACKS.techExplainer },
         { from: 368, file: BGM_TRACKS.techLofi },
       ]}
       chapterRanges={[{ from: 86, to: 268 }]}
       sfxCues={TECH_SFX}
-      progressColor="#38F2FF"
+      progressColor={progressColor}
     />
   );
 };

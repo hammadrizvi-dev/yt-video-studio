@@ -1,6 +1,7 @@
 import React from "react";
 import { CalculateMetadataFunction } from "remotion";
 import { BGM_TRACKS } from "@config/audioMap";
+import { StudioEpisodeProps } from "@config/studioSchema";
 import {
   EpisodeShell,
   SceneSlot,
@@ -12,10 +13,7 @@ import { Short02SplitCards } from "./scenes/Short02SplitCards";
 import { Short03Gauge } from "./scenes/Short03Gauge";
 import { Short04Climax } from "./scenes/Short04Climax";
 
-export type ShortEpisodeProps = {
-  hasVoiceOverride?: boolean;
-  voiceFileOverride?: string | null;
-};
+export type ShortEpisodeProps = Partial<StudioEpisodeProps>;
 
 const TRANSITION_FRAMES = 8;
 
@@ -50,6 +48,9 @@ const SHORT_SFX: SfxCue[] = [
 export const FinanceShort: React.FC<ShortEpisodeProps> = ({
   hasVoiceOverride = false,
   voiceFileOverride = null,
+  showCaptions = false,
+  debugSafeZone = false,
+  progressColor = "#F59E0B",
 }) => {
   return (
     <EpisodeShell
@@ -57,10 +58,12 @@ export const FinanceShort: React.FC<ShortEpisodeProps> = ({
       transitionFrames={TRANSITION_FRAMES}
       hasVoice={hasVoiceOverride}
       voiceFile={voiceFileOverride}
+      showCaptions={showCaptions}
+      debugSafeZone={debugSafeZone}
       bgmSegments={[{ from: 0, file: BGM_TRACKS.financeCase }]}
       chapterRanges={[{ from: 77, to: 164 }]}
       sfxCues={SHORT_SFX}
-      progressColor="#F59E0B"
+      progressColor={progressColor}
     />
   );
 };

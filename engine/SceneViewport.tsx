@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill } from "remotion";
 import { SafeCanvas, SafeCanvasProps } from "./SafeCanvas";
 import { Backdrop, BackdropMode } from "./Backdrop";
 import { CameraMotionPreset, CameraRig } from "./CameraRig";
@@ -11,6 +11,7 @@ export interface SceneViewportProps {
   camera?: CameraMotionPreset;
   impactFrames?: number[];
   shakeAmplitude?: number;
+  handheldIntensity?: number;
   align?: SafeCanvasProps["align"];
   gap?: number;
   debugSafeZone?: boolean;
@@ -19,7 +20,7 @@ export interface SceneViewportProps {
 
 /**
  * Standard per-scene container combining Backdrop + CameraRig + SafeCanvas.
- * Only active scenes mount here, eliminating Scene3D DOM pileup.
+ * Guarantees every scene respects 16:9 / 9:16 YouTube UI safe zones.
  */
 export const SceneViewport: React.FC<SceneViewportProps> = ({
   theme,
@@ -27,24 +28,20 @@ export const SceneViewport: React.FC<SceneViewportProps> = ({
   camera = "drift-in",
   impactFrames,
   shakeAmplitude,
+  handheldIntensity,
   align = "center",
   gap,
   debugSafeZone = false,
   children,
 }) => {
-  const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
-
-  // Gentle 10-frame micro-opacity settle avoids abrupt pixel pop without blurring
-  const fadeSafety = durationInFrames > 0 ? (frame >= 0 ? 1 : 0) : 1;
-
   return (
-    <AbsoluteFill style={{ opacity: fadeSafety }}>
+    <AbsoluteFill>
       <Backdrop theme={theme} mode={backdropMode}>
         <CameraRig
           preset={camera}
           impactFrames={impactFrames}
           shakeAmplitude={shakeAmplitude}
+          handheldIntensity={handheldIntensity}
         >
           <SafeCanvas align={align} gap={gap} debugGuide={debugSafeZone}>
             {children}

@@ -2,7 +2,9 @@ export type ThemeId =
   | "tech-obsidian"
   | "tech-studio"
   | "finance-dark"
-  | "finance-paper";
+  | "finance-paper"
+  | "documentary-noir"
+  | "vox-editorial";
 
 export interface ThemeTokens {
   id: ThemeId;
@@ -22,6 +24,7 @@ export interface ThemeTokens {
   textSecondary: string;
   textMuted: string;
   paperTexture?: string;
+  darkTexture?: string;
 }
 
 export const THEMES: Record<ThemeId, ThemeTokens> = {
@@ -79,6 +82,7 @@ export const THEMES: Record<ThemeId, ThemeTokens> = {
     textPrimary: "#FFFFFF",
     textSecondary: "#E2E8F0",
     textMuted: "#94A3B8",
+    darkTexture: "textures/user-dotted-dark.jpg",
   },
   "finance-paper": {
     id: "finance-paper",
@@ -97,6 +101,44 @@ export const THEMES: Record<ThemeId, ThemeTokens> = {
     textPrimary: "#18181B",
     textSecondary: "#3F3F46",
     textMuted: "#71717A",
+    paperTexture: "textures/user-paper-warm.jpg",
+  },
+  "documentary-noir": {
+    id: "documentary-noir",
+    isLight: false,
+    bgBase: "#07090E",
+    bgGlowPrimary: "#EAB308",
+    bgGlowSecondary: "#DC2626",
+    gridColor: "rgba(234, 179, 8, 0.14)",
+    surfaceBg: "rgba(15, 18, 26, 0.90)",
+    surfaceBorder: "rgba(234, 179, 8, 0.30)",
+    primary: "#EAB308",
+    accent: "#22C55E",
+    success: "#22C55E",
+    danger: "#EF4444",
+    info: "#38BDF8",
+    textPrimary: "#F8FAFC",
+    textSecondary: "#D4D8E1",
+    textMuted: "#8B95A5",
+    darkTexture: "textures/user-editorial-dark.jpg",
+  },
+  "vox-editorial": {
+    id: "vox-editorial",
+    isLight: true,
+    bgBase: "#F5F0E3",
+    bgGlowPrimary: "#EAB308",
+    bgGlowSecondary: "#1D4ED8",
+    gridColor: "rgba(20, 20, 19, 0.07)",
+    surfaceBg: "#FFFDF8",
+    surfaceBorder: "#D1C9B8",
+    primary: "#1D4ED8",
+    accent: "#EAB308",
+    success: "#047857",
+    danger: "#B91C1C",
+    info: "#1D4ED8",
+    textPrimary: "#141413",
+    textSecondary: "#333330",
+    textMuted: "#6B6A64",
     paperTexture: "textures/user-paper-warm.jpg",
   },
 };

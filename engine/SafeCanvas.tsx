@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AbsoluteFill, useVideoConfig } from "remotion";
 import { getSafeZone } from "@config/safeZones";
+import { SafeZoneDebugContext } from "./SafeZoneContext";
 
 export interface SafeCanvasProps {
   children: React.ReactNode;
@@ -24,6 +25,8 @@ export const SafeCanvas: React.FC<SafeCanvasProps> = ({
 }) => {
   const { width, height } = useVideoConfig();
   const sz = getSafeZone(width, height);
+  const contextDebug = useContext(SafeZoneDebugContext);
+  const showGuide = debugGuide || contextDebug;
 
   const justifyContent =
     align === "top"
@@ -34,7 +37,7 @@ export const SafeCanvas: React.FC<SafeCanvasProps> = ({
 
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
-      {debugGuide && (
+      {showGuide && (
         <div
           style={{
             position: "absolute",

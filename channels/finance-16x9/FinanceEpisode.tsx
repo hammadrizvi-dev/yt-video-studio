@@ -1,6 +1,7 @@
 import React from "react";
 import { CalculateMetadataFunction } from "remotion";
 import { BGM_TRACKS } from "@config/audioMap";
+import { StudioEpisodeProps } from "@config/studioSchema";
 import {
   EpisodeShell,
   SceneSlot,
@@ -17,10 +18,7 @@ import { Scene07DonutSplit } from "./scenes/Scene07DonutSplit";
 import { Scene08ScaleMap } from "./scenes/Scene08ScaleMap";
 import { Scene09Outro } from "./scenes/Scene09Outro";
 
-export type FinanceEpisodeProps = {
-  hasVoiceOverride?: boolean;
-  voiceFileOverride?: string | null;
-};
+export type FinanceEpisodeProps = Partial<StudioEpisodeProps>;
 
 const TRANSITION_FRAMES = 9;
 
@@ -66,6 +64,9 @@ const FINANCE_SFX: SfxCue[] = [
 export const FinanceEpisode: React.FC<FinanceEpisodeProps> = ({
   hasVoiceOverride = false,
   voiceFileOverride = null,
+  showCaptions = false,
+  debugSafeZone = false,
+  progressColor = "#F59E0B",
 }) => {
   return (
     <EpisodeShell
@@ -73,13 +74,15 @@ export const FinanceEpisode: React.FC<FinanceEpisodeProps> = ({
       transitionFrames={TRANSITION_FRAMES}
       hasVoice={hasVoiceOverride}
       voiceFile={voiceFileOverride}
+      showCaptions={showCaptions}
+      debugSafeZone={debugSafeZone}
       bgmSegments={[
         { from: 0, durationInFrames: 454, file: BGM_TRACKS.financeCase },
         { from: 454, file: BGM_TRACKS.financeWarm },
       ]}
       chapterRanges={[{ from: 172, to: 344 }]}
       sfxCues={FINANCE_SFX}
-      progressColor="#F59E0B"
+      progressColor={progressColor}
     />
   );
 };
