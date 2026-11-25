@@ -1,0 +1,21 @@
+{
+  "episodeId": "ep02",
+  "channel": "tech",
+  "compositionId": "Ep02TechAgent",
+  "title": "₹15,000 AI Subscriptions -> ₹0 Local + Free Key Stack",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "hasVoice": false,
+  "voiceFile": null,
+  "transitionFrames": 9,
+  "scenes": [
+    { "id": "s01-hook", "durationInFrames": 95, "cutMode": "whip", "isLight": false },
+    { "id": "s02-gauge", "durationInFrames": 95, "cutMode": "push", "isLight": false },
+    { "id": "s03-flow", "durationInFrames": 105, "cutMode": "whip", "isLight": false },
+    { "id": "s04-code", "durationInFrames": 100, "cutMode": "cut", "isLight": false },
+    { "id": "s05-news", "durationInFrames": 95, "cutMode": "cut", "isLight": true },
+    { "id": "s06-stack", "durationInFrames": 95, "cutMode": "push", "isLight": false },
+    { "id": "s07-outro", "durationInFrames": 85, "cutMode": "cut", "isLight": false }
+  ]
+}

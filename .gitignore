@@ -1,0 +1,11 @@
+# Dependencies (reproducible via npm install + package-lock.json; exceeds GitHub 100MB binary limit)
+node_modules/
+
+# Remotion build & cache artifacts
+.remotion/
+dist/
+dist-check/
+out/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,23 @@
+{
+  "episodeId": "ep01",
+  "channel": "finance",
+  "compositionId": "Ep01KamaiKitni",
+  "title": "₹300 Order Par Sirf ₹16 Profit Kyu?",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "hasVoice": false,
+  "voiceFile": null,
+  "transitionFrames": 9,
+  "scenes": [
+    { "id": "s01-hook", "durationInFrames": 90, "cutMode": "whip", "isLight": false },
+    { "id": "s02-bill", "durationInFrames": 100, "cutMode": "push", "isLight": false },
+    { "id": "s03-split", "durationInFrames": 95, "cutMode": "whip", "isLight": false },
+    { "id": "s04-gauge", "durationInFrames": 95, "cutMode": "push", "isLight": false },
+    { "id": "s05-flow", "durationInFrames": 110, "cutMode": "cut", "isLight": false },
+    { "id": "s06-news", "durationInFrames": 95, "cutMode": "push", "isLight": true },
+    { "id": "s07-donut", "durationInFrames": 100, "cutMode": "cut", "isLight": true },
+    { "id": "s08-map", "durationInFrames": 110, "cutMode": "cut", "isLight": false },
+    { "id": "s09-outro", "durationInFrames": 90, "cutMode": "cut", "isLight": true }
+  ]
+}

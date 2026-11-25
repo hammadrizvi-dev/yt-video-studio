@@ -1,0 +1,18 @@
+{
+  "episodeId": "sh01",
+  "channel": "finance",
+  "compositionId": "Sh01KamaiShort",
+  "title": "₹300 Food Order -> ₹16 Profit Short",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "hasVoice": false,
+  "voiceFile": null,
+  "transitionFrames": 8,
+  "scenes": [
+    { "id": "sh01-hook", "durationInFrames": 85, "cutMode": "whip", "isLight": false },
+    { "id": "sh02-split", "durationInFrames": 95, "cutMode": "push", "isLight": false },
+    { "id": "sh03-gauge", "durationInFrames": 90, "cutMode": "whip", "isLight": false },
+    { "id": "sh04-climax", "durationInFrames": 105, "cutMode": "cut", "isLight": false }
+  ]
+}
